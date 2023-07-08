@@ -1,3 +1,23 @@
+# 64-bit Dynamic Storage Allocator
+
+A Simple, 64-bit allocater based on implicit lists (& boundary tags)
+for coalescing, segregated explicit free lists for finding free blocks,
+as described in the CS:APP2e text. Blocks must be aligned to 16 byte
+boundaries. Minimum block size is 16 bytes. 
+
+This version is loosely based on 
+http://csapp.cs.cmu.edu/3e/ics3/code/vm/malloc/mm.c
+but unlike the book's version, it does not use C preprocessor 
+macros or explicit bit operations.
+
+It follows the book in counting in units of 4-byte words,
+but note that this is a choice (our actual solution chooses
+to count everything in bytes instead.)
+
+First adapted for CS3214 Summer 2020 by gback
+Updated by Tejas Choudhary for faster performance using explicit
+segregated free lists.
+
 # Heap Inspector
 
 The specification for Project 3 is on the course website. This README describes the specification for a brand new tool that can aid in the development of the malloclab project.
